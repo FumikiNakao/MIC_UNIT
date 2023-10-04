@@ -14,7 +14,6 @@ static void draw_waveform() {
   Serial.println(micValue);
   val_buf[pt] = map((int16_t)(micValue * X_SCALE), 1800, 4095,  0, 100);
 
-
   if (--pt < 0) {
     pt = MAX_LEN - 1;
   }
@@ -33,7 +32,7 @@ void setup() {
   M5.Lcd.setFreeFont(FSS12);
   M5.Lcd.setTextDatum(TC_DATUM);
   M5.Lcd.drawString("MIC Unit", 160, 0, GFXFF);
-  Serial.begin(9600);
+  Serial.begin(115200);
 
   dacWrite(25, 0); 
 
